@@ -1,0 +1,42 @@
+{
+  "id": "dream-weaver",
+  "name": "Dream Weaver",
+  "version": "1.0.0",
+  "description": "每日深夜做梦整理记忆，像人类睡眠一样完成记忆巩固、模式识别和洞察发现。自动调度 + 手动触发。",
+  "author": "Hanako",
+  "trust": "full-access",
+  "activationEvents": ["onToolCall:dream-start", "onToolCall:dream-insight", "onToolCall:dream-complete", "onToolCall:dream-journal", "onToolCall:dream-read-session", "onToolCall:dream-edit-memory", "onStartup"],
+  "minAppVersion": "0.82.0",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "dreamTime": {
+          "type": "string",
+          "default": "03:00",
+          "description": "每日做梦时间（24小时制 HH:MM，时区 Asia/Shanghai）"
+        },
+        "maxMemories": {
+          "type": "number",
+          "default": 30,
+          "description": "每次做梦最多处理的记忆条目数"
+        },
+        "dreamReportToUser": {
+          "type": "boolean",
+          "default": true,
+          "description": "做梦完成后是否自动向用户汇报梦境摘要"
+        },
+        "autoDream": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否启用自动定时做梦（关闭后仅手动触发）"
+        },
+        "workspaceDir": {
+          "type": "string",
+          "default": "",
+          "description": "工作区目录路径（可选）。设置后梦境可以读写 MEMORY.md、SOUL.md、working-buffer.md 等工作区文件。留空则跳过工作区操作。"
+        }
+      }
+    }
+  }
+}

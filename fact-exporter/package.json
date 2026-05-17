@@ -1,0 +1,8 @@
+{
+  "name": "fact-exporter",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0"
+  }
+}

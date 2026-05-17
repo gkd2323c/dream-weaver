@@ -1,0 +1,35 @@
+{
+  "id": "fact-exporter",
+  "name": "Fact Exporter",
+  "version": "1.0.0",
+  "description": "将 facts.db 导出为人类可读的 Markdown 文件。支持按标签分组、按时间排序，展示完整事实库内容。",
+  "author": "Hanako",
+  "trust": "full-access",
+  "activationEvents": [
+    "onToolCall:export-facts"
+  ],
+  "minAppVersion": "0.82.0",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "outputDir": {
+          "type": "string",
+          "default": "",
+          "description": "导出文件输出目录（留空则输出到工作区根目录）"
+        },
+        "maxFactsPerTag": {
+          "type": "number",
+          "default": 0,
+          "description": "每个标签最多列出多少条事实（0 = 不限制）"
+        },
+        "excludeTags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "排除的标签列表，这些标签下的事实不会出现在导出中"
+        }
+      }
+    }
+  }
+}
